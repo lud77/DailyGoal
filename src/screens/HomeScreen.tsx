@@ -2,11 +2,11 @@ import React, { useState } from 'react';
 import {
   View,
   StyleSheet,
-  SafeAreaView,
   StatusBar,
   TouchableOpacity,
   Text,
 } from 'react-native';
+import { SafeAreaView, useSafeAreaInsets } from 'react-native-safe-area-context';
 import HabitList from '../components/HabitList';
 import AddHabitModal from '../components/AddHabitModal';
 import useHabits from '../hooks/useHabits';
@@ -14,6 +14,7 @@ import useHabits from '../hooks/useHabits';
 const HomeScreen: React.FC = () => {
   const [isModalVisible, setIsModalVisible] = useState(false);
   const { habits, addHabit, toggleHabit, deleteHabit } = useHabits();
+  const insets = useSafeAreaInsets();
 
   const handleAddHabit = (habitName: string) => {
     addHabit(habitName);
@@ -22,7 +23,6 @@ const HomeScreen: React.FC = () => {
 
   const getTodayString = () => {
     const today = new Date();
-
     return today.toLocaleDateString('en-US', {
       weekday: 'long',
       year: 'numeric',
@@ -35,7 +35,7 @@ const HomeScreen: React.FC = () => {
   const totalCount = habits.length;
 
   return (
-    <SafeAreaView style={styles.container}>
+    <SafeAreaView style={styles.container} edges={['top', 'bottom']}>
       <StatusBar barStyle="dark-content" backgroundColor="#f8f9fa" />
 
       {/* Header */}
@@ -60,7 +60,7 @@ const HomeScreen: React.FC = () => {
 
       {/* Add Button */}
       <TouchableOpacity
-        style={styles.addButton}
+        style={[styles.addButton, { bottom: 30 + insets.bottom }]}
         onPress={() => setIsModalVisible(true)}
         activeOpacity={0.8}
       >
@@ -112,7 +112,6 @@ const styles = StyleSheet.create({
   addButton: {
     position: 'absolute',
     right: 20,
-    bottom: 30,
     width: 56,
     height: 56,
     borderRadius: 28,

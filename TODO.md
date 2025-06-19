@@ -13,7 +13,7 @@
 
 ## Bugs
 
-    - [ ] When switching to another app and back, the HomeScreen loses the padding top and bottom?
+    - [x] When switching to another app and back, the HomeScreen loses the padding top and bottom?
 
 
 ## Core MVP Features (No Backend):
