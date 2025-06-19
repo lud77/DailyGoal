@@ -1,23 +1,28 @@
 ## Implementation
 
     - [x] Create main view
-    - [ ] Create habit list
-    - [ ] Create habit item
-    - [ ] Create popup to insert new item
-    - [ ] Create logic to:
-        - [ ] Open popup when + button is pressed
-        - [ ] Add item when Confirm button is pressed in popup
-        - [ ] Remove item when X button is pressed on item
-        - [ ] Complete item when item is tapped
+    - [x] Create habit list
+    - [x] Create habit item
+    - [x] Create popup to insert new item
+    - [x] Create logic to:
+        - [x] Open popup when + button is pressed
+        - [x] Add item when Confirm button is pressed in popup
+        - [x] Remove item when X button is pressed on item
+        - [x] Complete item when item is tapped
+
+
+## Bugs
+
+    - [ ] When switching to another app and back, the HomeScreen loses the padding top and bottom?
 
 
 ## Core MVP Features (No Backend):
 
-    - [ ] Local-only state management (use AsyncStorage for persistence)
-    - [ ] Daily reset of the task list (reset logic based on date comparison)
-    - [ ] Add/remove habits (stored in memory or local storage)
-    - [ ] Mark habits as done (boolean flag)
-    - [ ] Basic UI (flatlist with checkboxes or toggles)
+    - [x] Local-only state management (use AsyncStorage for persistence)
+    - [x] Daily reset of the task list (reset logic based on date comparison)
+    - [x] Add/remove habits (stored in memory or local storage)
+    - [x] Mark habits as done (boolean flag)
+    - [x] Basic UI (flatlist with checkboxes or toggles)
 
 
 ## Expansion Options:

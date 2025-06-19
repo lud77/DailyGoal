@@ -20,7 +20,7 @@ const useHabits = () => {
         ...prevState,
         habits: prevState.habits.map(habit => ({
           ...habit,
-          completed: false, // Reset completion status
+          completedToday: false, // Reset completion status
         })),
         lastResetDate: today,
       }));
@@ -62,7 +62,7 @@ const useHabits = () => {
       ...prevState,
       habits: prevState.habits.map(habit =>
         habit.id === habitId
-          ? { ...habit, completed: !habit.completedToday }
+          ? { ...habit, completedToday: !habit.completedToday }
           : habit
       ),
     }));
@@ -103,7 +103,7 @@ const useHabits = () => {
       ...prevState,
       habits: prevState.habits.map(habit => ({
         ...habit,
-        completed: false,
+        completedToday: false,
       })),
       lastResetDate: getTodayString(),
     }));

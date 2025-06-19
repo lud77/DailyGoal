@@ -4,7 +4,6 @@ import {
   Text,
   TouchableOpacity,
   StyleSheet,
-  Animated,
 } from 'react-native';
 import { HabitItemProps } from '../types';
 
@@ -13,23 +12,7 @@ const HabitItem: React.FC<HabitItemProps> = ({
   onToggle,
   onDelete,
 }) => {
-  const scaleValue = new Animated.Value(1);
-
   const handleToggle = () => {
-    // Add a subtle animation when toggling
-    Animated.sequence([
-      Animated.timing(scaleValue, {
-        toValue: 0.95,
-        duration: 100,
-        useNativeDriver: true,
-      }),
-      Animated.timing(scaleValue, {
-        toValue: 1,
-        duration: 100,
-        useNativeDriver: true,
-      }),
-    ]).start();
-
     onToggle(habit.id);
   };
 
@@ -38,12 +21,7 @@ const HabitItem: React.FC<HabitItemProps> = ({
   };
 
   return (
-    <Animated.View
-      style={[
-        styles.container,
-        { transform: [{ scale: scaleValue }] }
-      ]}
-    >
+    <View style={styles.container}>
       {/* Checkbox */}
       <TouchableOpacity
         style={[
@@ -82,7 +60,7 @@ const HabitItem: React.FC<HabitItemProps> = ({
       >
         <Text style={styles.deleteButtonText}>×</Text>
       </TouchableOpacity>
-    </Animated.View>
+    </View>
   );
 };
 
@@ -147,8 +125,12 @@ const styles = StyleSheet.create({
   },
   deleteButtonText: {
     color: '#fff',
-    fontSize: 20,
-    fontWeight: '300',
+    fontSize: 18,
+    fontWeight: '400',
+    textAlign: 'center',
+    lineHeight: 18,
+    includeFontPadding: false,
+    textAlignVertical: 'center',
   },
 });
 
