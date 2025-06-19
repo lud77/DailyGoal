@@ -1,6 +1,6 @@
 ## Implementation
 
-    - [ ] Create main view
+    - [x] Create main view
     - [ ] Create habit list
     - [ ] Create habit item
     - [ ] Create popup to insert new item
