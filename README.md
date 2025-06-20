@@ -31,7 +31,7 @@
 <br />
 <div align="center">
   <a href="https://github.com/lud77/DailyGoal">
-    <font size="30">🎯</font>
+    <span style="font-size:80px">🎯</span>
   </a>
 
 <h3 align="center">DailyGoal</h3>
