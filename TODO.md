@@ -9,7 +9,14 @@
         - [x] Add item when Confirm button is pressed in popup
         - [x] Remove item when X button is pressed on item
         - [x] Complete item when item is tapped
-
+    - [ ] Allow reordering items
+    - [ ] Custom backend for syncing across devices
+    - [ ] Auth
+    - [ ] Analytics
+    - [ ] Cloud sync
+    - [ ] Push notifications
+    - [ ] Habit streak tracking
+    - [ ] Reminders or calendar integration
 
 ## Bugs
 
@@ -25,13 +32,5 @@
     - [x] Basic UI (flatlist with checkboxes or toggles)
 
 
-## Expansion Options:
 
-    - [ ] Custom backend for syncing across devices
-    - [ ] Auth
-    - [ ] Analytics
-    - [ ] Cloud sync
-    - [ ] Push notifications
-    - [ ] Habit streak tracking
-    - [ ] Reminders or calendar integration
 
