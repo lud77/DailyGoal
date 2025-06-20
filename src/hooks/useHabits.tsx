@@ -39,8 +39,6 @@ const useHabits = () => {
 
   // Add a new habit
   const addHabit = useCallback((name: string) => {
-    if (!name.trim()) return;
-
     const newHabit: Habit = {
       id: generateId(),
       name: name.trim(),
@@ -99,7 +97,7 @@ const useHabits = () => {
 
   // Reset all habits (for testing or manual reset)
   const resetAllHabits = useCallback(() => {
-    setHabitState(prevState => ({
+    setHabitState((prevState) => ({
       ...prevState,
       habits: prevState.habits.map(habit => ({
         ...habit,
@@ -111,7 +109,7 @@ const useHabits = () => {
 
   // Clear all habits
   const clearAllHabits = useCallback(() => {
-    setHabitState(prevState => ({
+    setHabitState((prevState) => ({
       ...prevState,
       habits: [],
     }));

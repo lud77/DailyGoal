@@ -24,7 +24,7 @@ const AddHabitModal: React.FC<AddHabitModalProps> = ({
   // Validate input
   useEffect(() => {
     const trimmedName = habitName.trim();
-    setIsValid(trimmedName.length >= 3 && trimmedName.length <= 50);
+    setIsValid(trimmedName.length <= 50);
   }, [habitName]);
 
   // Auto-focus when modal opens
@@ -76,7 +76,7 @@ const AddHabitModal: React.FC<AddHabitModalProps> = ({
     >
       <KeyboardAvoidingView
         style={styles.overlay}
-        behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
+        behavior={'height'}
       >
         <TouchableOpacity
           style={styles.backdrop}
@@ -125,10 +125,7 @@ const AddHabitModal: React.FC<AddHabitModalProps> = ({
                   {/* Validation Message */}
                   {habitName.length > 0 && !isValid && (
                     <Text style={styles.validationText}>
-                      {habitName.trim().length < 3
-                        ? 'Habit name must be at least 3 characters'
-                        : 'Habit name is too long'
-                      }
+                      Habit name is too long
                     </Text>
                   )}
                 </View>

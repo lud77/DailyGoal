@@ -20,6 +20,9 @@ const HabitItem: React.FC<HabitItemProps> = ({
     onDelete(habit.id);
   };
 
+  const hasDescription = habit.name.trim().length > 0;
+  const displayText = hasDescription ? habit.name : 'No description';
+
   return (
     <View style={styles.container}>
       {/* Checkbox */}
@@ -45,10 +48,11 @@ const HabitItem: React.FC<HabitItemProps> = ({
         <Text
           style={[
             styles.habitText,
-            habit.completedToday && styles.habitTextCompleted
+            habit.completedToday && styles.habitTextCompleted,
+            !hasDescription && styles.noDescription,
           ]}
         >
-          {habit.name}
+          {displayText}
         </Text>
       </TouchableOpacity>
 
@@ -132,6 +136,10 @@ const styles = StyleSheet.create({
     includeFontPadding: false,
     textAlignVertical: 'center',
   },
+  noDescription: {
+    color: '#aaa',
+    fontStyle: 'italic',
+  }
 });
 
 export default HabitItem;
